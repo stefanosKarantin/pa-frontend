@@ -1,0 +1,27 @@
+<div class="payments">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Username</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let payment of viewPayments">
+          <th scope="row">{{ payment.id }}</th>
+          <td>
+            {{ payment.username }}
+          </td>
+          <td>{{ payment.amount + " " + payment.currency}}</td>
+          <td>{{ payment.date }}</td>
+        </tr>
+        </tbody>
+    </table>
+    
+    <div class="d-flex justify-content-between p-2 wrap">
+        <ngb-pagination class="wrap" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshPayments(page)">
+        </ngb-pagination>
+    </div>
+</div>

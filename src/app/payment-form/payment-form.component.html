@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>
+      Payments
+    </h1>
+    <form #paymentForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="usernameInput">Username</label>
+        <input
+            id="usernameInput"
+            class="form-control"
+            type="text"
+            name="username"
+            placeholder="Enter username"
+            [(ngModel)]="model.username"
+            required
+        >
+      </div>
+      <div class="form-group">
+        <label for="amountInput">Amount</label>
+        <input
+            id="amountInput"
+            class="form-control"
+            type="number"
+            name="amount"
+            placeholder="Enter amount"
+            [(ngModel)]="model.amount"
+            required
+            min="1"
+        >
+      </div>
+      <div class="form-group">
+        <label for="currencySelect">Currency</label>
+        <select class="custom-select" name="currency" id="currencySelect" form="paymentForm" required>
+            <option *ngFor="let currency of currencies" [value]="currency" [(ngModel)]="model.currency">{{currency}}</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!paymentForm.form.valid">Add Payment</button>
+    </form>
+</div>

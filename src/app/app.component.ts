@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-end';
+  onSubmit(data: Object)
+  {
+    console.log(data)
+  }
 }

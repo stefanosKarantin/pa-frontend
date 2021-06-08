@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentsTableComponent } from './payments-table/payments-table.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PaymentFormComponent } from './payment-form/payment-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PaymentsTableComponent,
+    PaymentFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

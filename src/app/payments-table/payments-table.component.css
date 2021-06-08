@@ -1,0 +1,8 @@
+.payments {
+    margin: 40px auto;
+    max-width: 90vw;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
